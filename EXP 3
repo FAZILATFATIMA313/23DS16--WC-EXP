@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fazilat's Bookstore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5f5dc;
+    }
+    .navbar-custom {
+      background-color: #556b2f;
+    }
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link,
+    .navbar-custom .nav-link.active {
+      color: #fff !important;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #dcdcdc !important;
+    }
+    .btn-custom {
+      background-color: #556b2f;
+      border: none;
+      color: #fff;
+    }
+    .btn-custom:hover {
+      background-color: #445626;
+      color: #fff;
+    }
+    .card {
+      border: 1px solid #ddd;
+      background-color: #fff;
+    }
+    footer {
+      background-color: #556b2f;
+      color: #fff;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+      color: #dcdcdc;
+    }
+    .brand-cursive {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+    }
+    header .brand-cursive {
+      font-size: 3rem;
+      color: #556b2f;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand brand-cursive" href="#">Fazilat's Bookstore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Bestsellers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">New Releases</a></li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search books...">
+          <button class="btn btn-custom" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <header class="container text-center my-5" style="padding-top: 80px;">
+    <h1 class="fw-bold brand-cursive">Fazilat's Bookstore</h1>
+    <p class="lead text-secondary">Your simple place to discover books</p>
+  </header>
+
+  <main class="container">
+    <h2 class="text-center mb-4 text-dark">Available Books</h2>
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="C:\Users\fazil\Downloads\ego.jpeg" class="card-img-top" alt="Ego is the Enemy">
+          <div class="card-body">
+            <h5 class="card-title">Ego is the Enemy</h5>
+            <p class="card-text text-muted">Ryan Holiday</p>
+            <p class="fw-bold text-dark">₹915</p>
+            <a href="#" class="btn btn-custom w-100">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="C:\Users\fazil\Downloads\choice.jpeg" class="card-img-top" alt="The Choice">
+          <div class="card-body">
+            <h5 class="card-title">The Choice</h5>
+            <p class="card-text text-muted">Edith Eger</p>
+            <p class="fw-bold text-dark">₹745</p>
+            <a href="#" class="btn btn-custom w-100">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="C:\Users\fazil\Downloads\money.jpeg" class="card-img-top" alt="Psychology of Money">
+          <div class="card-body">
+            <h5 class="card-title">Psychology of Money</h5>
+            <p class="card-text text-muted">Morgan Housel</p>
+            <p class="fw-bold text-dark">₹788</p>
+            <a href="#" class="btn btn-custom w-100">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="text-center py-3 mt-5 border-top">
+    <div class="container">
+      <p class="mb-1">© 2023 Fazilat's Bookstore. All rights reserved.</p>
+      <a href="#" class="me-3">About Us</a>
+      <a href="#" class="me-3">Contact</a>
+      <a href="#" class="me-3">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
