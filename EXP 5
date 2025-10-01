@@ -1,0 +1,173 @@
+
+// src/App.js
+import React, { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [form, setForm] = useState({
+    fname: "",
+    lname: "",
+    password: "",
+    email: "",
+    mobile: "",
+    address: ""
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const validate = () => {
+    let tempErrors = {};
+    let isValid = true;
+
+    if (!/^[A-Za-z]{6,}$/.test(form.fname)) {
+      tempErrors.fname = "First name must be at least 6 letters.";
+      isValid = false;
+    }
+
+    if (!form.lname.trim()) {
+      tempErrors.lname = "Last name cannot be empty.";
+      isValid = false;
+    }
+
+    if (form.password.length < 6) {
+      tempErrors.password = "Password must be at least 6 characters.";
+      isValid = false;
+    }
+
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+    if (!emailPattern.test(form.email)) {
+      tempErrors.email = "Enter a valid email (e.g. name@domain.com).";
+      isValid = false;
+    }
+
+    if (!/^[0-9]{10}$/.test(form.mobile)) {
+      tempErrors.mobile = "Mobile must be 10 digits.";
+      isValid = false;
+    }
+
+    if (!form.address.trim()) {
+      tempErrors.address = "Address cannot be empty.";
+      isValid = false;
+    }
+
+    setErrors(tempErrors);
+    return isValid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      alert("Registration Successful ✅");
+      setForm({
+        fname: "",
+        lname: "",
+        password: "",
+        email: "",
+        mobile: "",
+        address: ""
+      });
+      setErrors({});
+    }
+  };
+
+  return (
+    <div className="container">
+      <h2>React Registration Form</h2>
+      <form onSubmit={handleSubmit}>
+        <label>First Name</label>
+        <input type="text" name="fname" value={form.fname} onChange={handleChange} />
+        <div className="error">{errors.fname}</div>
+
+        <label>Last Name</label>
+        <input type="text" name="lname" value={form.lname} onChange={handleChange} />
+        <div className="error">{errors.lname}</div>
+
+        <label>Password</label>
+        <input type="password" name="password" value={form.password} onChange={handleChange} />
+        <div className="error">{errors.password}</div>
+
+        <label>Email</label>
+        <input type="text" name="email" value={form.email} onChange={handleChange} />
+        <div className="error">{errors.email}</div>
+
+        <label>Mobile Number</label>
+        <input type="text" name="mobile" value={form.mobile} onChange={handleChange} />
+        <div className="error">{errors.mobile}</div>
+
+        <label>Address</label>
+        <textarea name="address" value={form.address} onChange={handleChange}></textarea>
+        <div className="error">{errors.address}</div>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+Styling (App.css)
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f5f1;
+}
+
+.container {
+  width: 400px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2f4f4f;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+  border-color: #556b2f;
+  outline: none;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 0.85em;
+  margin-bottom: 5px;
+}
+
+button {
+  background: #556b2f;
+  color: white;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #445626;
+}
