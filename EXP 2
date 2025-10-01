@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+	<title>Fazilat's 'Bookstore</title>
+	<style>
+    	body {
+        	font-family: 'Cinzel', serif;
+        	background: #FFF0F5;
+        	color: #222;
+        	margin: 0;
+        	padding: 20px;
+        	background-image: url("/home/aiktc/Downloads/bookstore.png");
+        	background-repeat: no-repeat;
+        	background-size: 500px
+    	}
+    	header, footer {
+        	text-align: center;
+        	margin-bottom: 20px;
+    	}
+    	h1 {
+        	font-weight: bold;
+       	 
+
+    	}
+     	h2 {
+      	font-weight: semi-bold;
+      	display: flex;
+      	margin-left: 670px;
+      	}
+    	.book-container {
+        	display: flex;
+        	flex-wrap: wrap;
+        	justify-content:right;
+        	gap: 16px;
+        	max-width: 900px;
+        	margin: 0 auto 30px auto;
+    	}
+    	.card {
+        	border: 1px solid #ccc;
+        	border-radius: 4px;
+        	background: #fafafa;
+        	width: 220px;
+        	height: 450px;
+        	padding: 16px;
+        	box-sizing: border-box;
+        	box-shadow: none;
+    	}
+    	.book-title {
+        	font-size: 1.1em;
+        	margin-bottom: 8px;
+font-weight: bold:
+    	}
+    	.book-author {
+        	font-size: 0.95em;
+        	color: #555;
+        	margin-bottom: 10px;
+    	}
+    	.price {
+        	font-weight: bold;
+        	color: #222;
+    	}
+	</style>
+</head>
+<body>
+	<header>
+    	<h1>Fazilat's Bookstore</h1>
+    	<p>Your simple place to discover books</p>
+	</header>
+	<section>
+    	<h2>Available Books</h2>
+    	<div class="book-container">
+        	<div class="card">
+            	<img src="/home/aiktc/Downloads/ego.jpeg" alt="Ego is the Enemy">
+
+            	<div class="book-title">Ego is the Enemy</div>
+            	<div class="book-author">Ryan Holiday</div>
+            	<div class="price">&#8377;915</div>
+        	</div>
+        	<div class="card">
+ <img src="/home/aiktc/Downloads/choice.jpeg" alt="The Choice">
+            	<div class="book-title">The Choice</div>
+            	<div class="book-author">Edith Eger</div>
+            	<div class="price">&#8377;745</div>
+        	</div>
+        	<div class="card">
+<img src="/home/aiktc/Downloads/money.jpeg" alt="alt="Psychology of Money">
+            	<div class="book-title">Pscychology of Money</div>
+            	<div class="book-author">Morgan Housel</div>
+            	<div class="price">&#8377;788</div>
+        	</div>
+       	 
+	</section>
+ 
+</body>
+</html>
+
