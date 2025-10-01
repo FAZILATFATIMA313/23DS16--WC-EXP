@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f5f1;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2f4f4f;
+    }
+    label {
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+      display: block;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    input:focus, textarea:focus {
+      border-color: #556b2f;
+      outline: none;
+    }
+    .error {
+      color: #d9534f;
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+    button {
+      background: #556b2f;
+      color: white;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #445626;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form id="regForm" onsubmit="return validateForm()">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname">
+      <div id="fnameError" class="error"></div>
+
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname">
+      <div id="lnameError" class="error"></div>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <div id="passwordError" class="error"></div>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email">
+      <div id="emailError" class="error"></div>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="text" id="mobile" name="mobile">
+      <div id="mobileError" class="error"></div>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address"></textarea>
+      <div id="addressError" class="error"></div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      let isValid = true;
+      document.querySelectorAll(".error").forEach(el => el.innerHTML = "");
+
+      let fname = document.getElementById("fname").value.trim();
+      if (!/^[A-Za-z]{6,}$/.test(fname)) {
+        document.getElementById("fnameError").innerHTML = "First name must be at least 6 letters (alphabets only).";
+        isValid = false;
+      }
+
+      let lname = document.getElementById("lname").value.trim();
+      if (lname === "") {
+        document.getElementById("lnameError").innerHTML = "Last name cannot be empty.";
+        isValid = false;
+      }
+
+      let password = document.getElementById("password").value;
+      if (password.length < 6) {
+        document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters.";
+        isValid = false;
+      }
+
+      let email = document.getElementById("email").value.trim();
+      let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailError").innerHTML = "Enter a valid email (e.g. name@domain.com).";
+        isValid = false;
+      }
+
+      let mobile = document.getElementById("mobile").value.trim();
+      if (!/^[0-9]{10}$/.test(mobile)) {
+        document.getElementById("mobileError").innerHTML = "Mobile number must be exactly 10 digits.";
+        isValid = false;
+      }
+
+      let address = document.getElementById("address").value.trim();
+      if (address === "") {
+        document.getElementById("addressError").innerHTML = "Address cannot be empty.";
+        isValid = false;
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>
