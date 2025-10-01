@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Website</title>
+</head>
+<body>
+    <!-- Home Page -->
+    <h1>Welcome to AIKTC</h1>
+    <p>This is the official website of our college.</p>
+    <a href="#departments">Departments</a> | 
+    <a href="#facilities">Facilities</a> | 
+    <a href="#contact">Contact Us</a>
+
+    <hr>
+
+    <!-- Department Page -->
+    <h2 id="departments">Departments</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Department Name</th>
+            <th>Head of Department</th>
+        </tr>
+        <tr>
+            <td>Computer Science</td>
+            <td>Imran Akhtar</td>
+        </tr>
+        <tr>
+            <td>Data Science</td>
+            <td>Tabassum Maktum</td>
+        </tr>
+        <tr>
+            <td>AIML</td>
+            <td>Renuka</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <!-- Facilities Page -->
+    <h2 id="facilities">Facilities</h2>
+    <h3>Available Facilities </h3>
+    <ul>
+        <li>Library</li>
+        <li>Laboratories</li>
+        <li>Sports Complex</li>
+        <li>Cafeteria</li>
+    </ul>
+
+    <h3>Upcoming Facilities </h3>
+    <ol>
+        <li>New Hostel Building</li>
+        <li>Research Center</li>
+        <li>Digital Classrooms</li>
+    </ol>
+
+    <hr>
+
+    <!-- Contact Us Page -->
+    <h2 id="contact">Contact Us</h2>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
